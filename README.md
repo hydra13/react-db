@@ -1,1 +1,2 @@
-# react-db
+# React-GB
+There are homeworks for GeekBrains (React)
