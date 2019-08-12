@@ -2,21 +2,41 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import './App.scss';
-import Login from './Login';
-import Menu from './Menu';
 import Blog from './components/Blog';
 import WelcomeModal from './components/WelcomeModal';
 
+const posts = [
+    {
+        title: "Post 1",
+        postBody: "Post 1 body text",
+        created: new Date().toDateString(),
+        author: 'Tester'
+    },
+    {
+        title: "Post 2",
+        postBody: "Post 2 body text",
+        created: new Date().toDateString(),
+        author: 'Tester'
+    },
+    {
+        title: "Post 3",
+        postBody: "Post 3 body text",
+        created: new Date().toDateString(),
+        author: 'Tester'
+    }
+]
+
+const modalContent = {
+    title: "Welcome!",
+    content: "This is the simple description"
+}
+
 class App extends React.Component {
     render() {
-        // const leftItems = [{ title: 'Home', href: '/' }, { title: 'Documentation', href: '/docs' }, { title: 'About', href: '/about' }];
-        // const rightItems = [{ title: 'Log in', href: '/login' }];
         return (
-            <div>
-                {/* <Menu leftItems={leftItems} rightItems={rightItems} />
-                <Login /> */}
-                <Blog />
-                <WelcomeModal />
+            <div className="container">
+                <Blog posts={posts} />
+                <WelcomeModal title={modalContent.title} content={modalContent.content} />
             </div>
         )
     }
