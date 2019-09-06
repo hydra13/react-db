@@ -3,20 +3,17 @@ import PropTypes from 'prop-types';
 import './Menu.scss';
 
 class Menu extends React.Component {
-    componentDidMount() {
-        document.addEventListener('DOMContentLoaded', () => {
-            const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-            if ($navbarBurgers.length > 0) {
-                $navbarBurgers.forEach(el => {
-                    el.addEventListener('click', () => {
-                        const target = el.dataset.target;
-                        const $target = document.getElementById(target);
-                        el.classList.toggle('is-active');
-                        $target.classList.toggle('is-active');
-                    });
-                });
-            }
-        });
+    constructor(props) {
+        super(props);
+        this.myRef = React.createRef();
+        this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
+    }
+
+    toggleMobileMenu(e) {
+        const hamburger = e.target;
+        const navbarMenu = this.myRef.current;
+        hamburger.classList.toggle('is-active');
+        navbarMenu.classList.toggle('is-active');
     }
 
     render() {
@@ -29,13 +26,13 @@ class Menu extends React.Component {
         return (
             <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div className="navbar-brand">
-                    <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" onClick={this.toggleMobileMenu}>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                     </a>
                 </div>
-                <div id="navbarBasicExample" className="navbar-menu">
+                <div ref={this.myRef} className="navbar-menu">
                     <div className="navbar-start">
                         {leftItems}
                     </div>
