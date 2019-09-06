@@ -8,13 +8,7 @@ import './Blog.scss';
 class Blog extends React.Component {
     render() {
         const postsElements = this.props.posts.map(post => {
-            return <Post
-                key={post.title + post.created}
-                title={post.title}
-                postBody={post.postBody}
-                created={post.created}
-                author={post.author}
-            />;
+            return <Post key={post.title + post.created} {...post} />;
         })
         return (
             <div>

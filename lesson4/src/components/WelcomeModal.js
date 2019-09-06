@@ -12,14 +12,14 @@ class WelcomeModal extends React.Component {
         this.setState(prevState => ({ isVisible: !prevState.isVisible }));
     }
     componentDidMount() {
-        this.setState({ isVisible: false })
+        this.setState({ isVisible: true })
     }
     render() {
         const { title, content } = this.props;
         const { isVisible } = this.state;
         return (
             <div>
-                <div className={`modal ${isVisible ? "" : " is-active"}`}>
+                <div className={`modal ${isVisible ? "is-active" : ""}`}>
                     <div className="modal-background"></div>
                     <div className="modal-card">
                         <header className="modal-card-head">
