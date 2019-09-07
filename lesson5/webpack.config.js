@@ -15,7 +15,7 @@ module.exports = {
             },
             {
                 test: /\.s?css$/,
-                exclude: /node_modules/,
+                //exclude: /node_modules/,
                 use: [
                     'style-loader',
                     'css-loader',
@@ -23,5 +23,9 @@ module.exports = {
                 ]
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true,
+        contentBase: path.resolve(__dirname, 'dist')
     }
 }

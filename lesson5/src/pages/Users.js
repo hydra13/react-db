@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
-import "./Users.scss"
+import React, { Component } from 'react';
+import UsersList from '../components/UsersList';
+import "./Users.scss";
 
 export default class Users extends Component {
     render() {
         return (
             <div>
-                Users
+                {
+                    (!this.props.children) ?
+                        (<UsersList />)
+                        :
+                        (this.props.children)
+                }
             </div>
         )
     }

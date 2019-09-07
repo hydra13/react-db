@@ -1,12 +1,23 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router';
 import "./Menu.scss"
 
 export default class Menu extends Component {
     render() {
         return (
-            <div>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container">
+                    <Link to="/" className="navbar-brand">
+                        {this.props.brand}
+                    </Link>
 
-            </div>
+                    <div className="collapse navbar-collapse">
+                        <ul className="navbar-nav">
+                            {this.props.children}
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         )
     }
 }
