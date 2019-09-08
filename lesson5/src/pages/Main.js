@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import "./Main.scss";
+import React, { Component } from 'react';
 
 export default class Main extends Component {
     render() {

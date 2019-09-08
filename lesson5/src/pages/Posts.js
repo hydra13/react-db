@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import UsersList from '../components/UsersList';
+import PostsList from '../components/PostsList';
 
-export default class Users extends Component {
+
+export default class Posts extends Component {
     render() {
         return (
             <div>
                 {
                     (!this.props.children) ?
-                        (<UsersList />)
+                        (<PostsList />)
                         :
                         (this.props.children)
                 }

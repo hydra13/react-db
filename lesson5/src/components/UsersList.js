@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import User from './User';
-import "./UsersList.scss"
 
 export default class UsersList extends Component {
     constructor(props) {

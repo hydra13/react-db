@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
-import "./Layout.scss";
 
 export default class Layout extends Component {
     constructor(props) {
@@ -22,6 +21,12 @@ export default class Layout extends Component {
                     </MenuItem>
                     <MenuItem href="/users" active={this.isActive('/users')}>
                         Пользователи
+                    </MenuItem>
+                    <MenuItem href="/posts" active={this.isActive('/posts')}>
+                        Посты
+                    </MenuItem>
+                    <MenuItem href="/comments" active={this.isActive('/comments')}>
+                        Комментарии
                     </MenuItem>
                 </Menu>
                 <div className="container">
