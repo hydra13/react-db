@@ -17,7 +17,7 @@ export default class Comment extends Component {
         )
     }
     componentDidMount() {
-        axios.get(`https://jsonplaceholder.typicode.com/comments/${this.props.params.commentId}`)
+        axios.get(`https://jsonplaceholder.typicode.com/comments/${this.props.match.params.commentId}`)
             .then(response => {
                 this.setState({ comment: response.data })
             })

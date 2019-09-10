@@ -17,7 +17,8 @@ export default class Post extends Component {
         )
     }
     componentDidMount() {
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${this.props.params.postId}`)
+        console.dir(this.props)
+        axios.get(`https://jsonplaceholder.typicode.com/posts/${this.props.match.params.postId}`)
             .then(response => {
                 this.setState({ post: response.data })
             })
