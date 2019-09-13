@@ -1,11 +1,11 @@
 import dispatcher from '../dispatcher';
 import { EventEmitter } from 'events';
 
-class PostStore extends EventEmitter {
+class UserStore extends EventEmitter {
     constructor() {
         super();
-        this.posts = [];
-        this.getPosts = this.getPosts.bind(this);
+        this.users = [];
+        this.getUsers = this.getUsers.bind(this);
         this.change = this.change.bind(this);
         this.handleActions = this.handleActions.bind(this);
     }
@@ -14,21 +14,21 @@ class PostStore extends EventEmitter {
         this.emit('change');
     }
 
-    getPosts(posts) {
-        this.posts = posts;
+    getUsers(users) {
+        this.users = users;
         this.change();
     }
 
     handleActions(action) {
         switch (action.type) {
-            case 'GET_POSTS': {
-                this.getPosts(action.data);
+            case 'GET_USERS': {
+                this.getUsers(action.data);
                 break;
             }
         }
     }
 }
 
-const store = new PostStore();
+const store = new UserStore();
 dispatcher.register(store.handleActions);
 export default store;
