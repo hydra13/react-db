@@ -6,7 +6,7 @@ const User = props => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://jsonplaceholder.typicode.com/users/${props.params.userId}`)
+        axios.get(`http://jsonplaceholder.typicode.com/users/${props.match.params.userId}`)
         .then(response => {
             setUser(response.data);
         })

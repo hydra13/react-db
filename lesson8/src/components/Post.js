@@ -6,13 +6,13 @@ const Post = props => {
     return (
         <div className="card border-secondary mb-3">
             <div className="card-header">
-                <Link to={`posts/${id}`}>
+                <Link to={`/posts/${id}`}>
                     {title}
                 </Link>
             </div>
             <div className="card-body text-secondary">
                 <p>{body}</p>
-                <Link to={`users/${userId}`}>
+                <Link to={`/users/${userId}`}>
                     Об авторе
                 </Link>
             </div>
