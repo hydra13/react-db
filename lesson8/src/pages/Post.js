@@ -1,26 +1,21 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import PostComponent from '../components/Post';
 
-export default class Post extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            post: null
-        }
-    }
-    render() {
-        return (
-            <div>
-                {this.state.post && <PostComponent {...this.state.post} />}
-            </div>
-        )
-    }
-    componentDidMount() {
-        axios.get(`https://jsonplaceholder.typicode.com/posts/${this.props.params.postId}`)
-            .then(response => {
-                this.setState({ post: response.data })
-            })
-    }
+const Post = props => {
+    const [post, setPost] = useState(null);
 
+    useEffect(() => {
+        axios.get(`https://jsonplaceholder.typicode.com/posts/${props.params.postId}`)
+            .then(response => {
+                setPost(response.data);
+            })
+    }, [])
+
+    return (
+        <div>
+            {post && <PostComponent {...post} />}
+        </div>
+    )
 }
+export default Post;

@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class PageNotFound extends Component {
-    render() {
-        return (
-            <div>
-                Ошибка 404! Страница не найдена
-            </div>
-        )
-    }
+const PageNotFound = props => {
+    return (
+        <div>
+            Ошибка 404! Страница не найдена
+        </div>
+    )
 }
+export default PageNotFound;
