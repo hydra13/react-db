@@ -32,7 +32,6 @@ class Comment extends Component {
 function mapStateToProps(state) {
     return {
         comments: state.comments.comments,
-        fetching: state.comments.fetching
     }
 }
 
