@@ -34,7 +34,6 @@ class User extends Component {
 function mapStateToProps(state) {
     return {
         users: state.users.users,
-        fetching: state.users.fetching
     }
 }
 
