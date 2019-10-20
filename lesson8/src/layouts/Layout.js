@@ -3,7 +3,7 @@ import Menu from '../components/Menu';
 import MenuItem from '../components/MenuItem';
 
 const Layout = props => {
-    const [brand, setBrand] = useState('React blog!');
+    const brand = 'React blog!';
 
     const isActive = href => {
         return window.location.pathname === href;
