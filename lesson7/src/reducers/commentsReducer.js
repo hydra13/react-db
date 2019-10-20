@@ -1,7 +1,6 @@
 const initState = {
     comments: [],
     fetching: false,
-    fetched: false,
     error: null
 }
 export default function reducer(state=initState, action) {
